@@ -6,7 +6,7 @@ mat-spinner{
 }
 
 div{
-    margin: 20px 300px;
+    margin: 20px 280px;
     display: flex;
     flex-direction: row;
     
@@ -15,5 +15,13 @@ div{
     fen-job-card{
         background-color: white;
         margin-left: -240px;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.025);
+            z-index: 1100!important;
+            transition: all 125ms ease-in;
+            opacity: 0.95;
+        }
     }
 }
