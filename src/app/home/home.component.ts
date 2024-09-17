@@ -3,6 +3,7 @@ import { DataService } from '../shared/services/data.service';
 import { ToolJob } from '../shared/interfaces/tool-job';
 import { CommonModule } from '@angular/common';
 import { JobCardComponent } from "../job-card/job-card.component";
+import { distinctUntilChanged, interval, Observable, startWith, switchMap } from 'rxjs';
 
 @Component({
   selector: 'fen-home',
@@ -12,13 +13,14 @@ import { JobCardComponent } from "../job-card/job-card.component";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public jobData: ToolJob[] = []
+  jobData$: Observable<ToolJob[]>;
   dataService = inject(DataService);
 
   constructor() {
-    this.dataService.getJobs().subscribe(res => {
-      this.jobData = res;
-    });
-
+    this.jobData$ = interval(10000).pipe(
+      startWith(0),
+      switchMap(() => this.dataService.getJobs()),
+      distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
+    );
   }
 }
