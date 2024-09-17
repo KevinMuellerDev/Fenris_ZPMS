@@ -1,26 +1,51 @@
-.outer-frame{
+.outer-frame {
     margin: 32px;
     padding: 32px;
     border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     max-width: 320px;
 
-    
-    .upper-frame{
+
+
+    .upper-frame {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
 
-        .upper-frame-box{
+        #jobname {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .upper-frame-box {
             display: flex;
             flex-direction: column;
             gap: 8px;
 
-            h3{
+            span {
+                font-weight: 600;
+            }
+
+
+            h2 {
                 margin: 0;
             }
         }
     }
+
+    .date-frame,
+    .client-frame,
+    .test-frame {
+        margin-top: 12px;
+        display: flex;
+        gap: 12px;
+
+        span {
+            font-weight: 600;
+        }
+
+    }
+
 
 }

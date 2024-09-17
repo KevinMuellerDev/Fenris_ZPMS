@@ -1,10 +1,22 @@
 @if (cardData) {
 <div class="outer-frame">
     <div class="upper-frame">
-        <div>{{cardData.name}}</div>
+        <div id="jobname">{{cardData.name}}</div>
         <div class="upper-frame-box">
             <span>Kiste</span>
-            <h3>{{cardData.box}}</h3>
+            <h2>{{cardData.box}}</h2>
         </div>
+    </div>
+    <div class="date-frame">
+        <div><span>Eingang ZPF: </span>{{cardData.dateOfReceipt | date:'dd.MM.YY'}}</div>
+        <div><span>Terminwunsch: </span>{{cardData.desiredDeadline | date:'dd.MM.YY'}}</div>
+        <div><span>KW: </span>{{cardData.desiredDeadline | date:'ww'}}</div>
+    </div>
+    <div class="client-frame">
+        <span>Auftraggeber: </span>{{cardData.client}}
+    </div>
+    <div class="test-frame">
+        <span>Prüfung: </span> {{cardData.typeOfTest}}
+        <span>Klima: </span> {{cardData.climateState}}
     </div>
 </div>}
