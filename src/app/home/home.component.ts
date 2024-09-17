@@ -21,6 +21,7 @@ export class HomeComponent {
   constructor() {
     this.loading$.next(true)  
     this.jobData$ = interval(3000).pipe(
+      startWith(0),
       switchMap(() => this.dataService.getJobs()),
       distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr)),
       tap(()=>{this.loading$.next(false)})

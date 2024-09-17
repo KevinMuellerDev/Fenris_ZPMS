@@ -1,7 +1,9 @@
+<div>
+    @for (job of jobData$ | async; track jobData$; let i = $index) {
+    <fen-job-card [style.z-index]="1000-i" [cardData]="job"></fen-job-card>
+    }
+</div>
 
-@for (job of jobData$ | async; track $index) {
-    <fen-job-card [cardData]="job"></fen-job-card>
-}
 @if (loading$.value == true) {
-    <mat-spinner></mat-spinner>
+<mat-spinner></mat-spinner>
 }

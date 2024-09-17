@@ -4,3 +4,16 @@ mat-spinner{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+div{
+    margin: 20px 300px;
+    display: flex;
+    flex-direction: row;
+    
+    
+
+    fen-job-card{
+        background-color: white;
+        margin-left: -240px;
+    }
+}
