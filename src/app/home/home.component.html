@@ -1,3 +1,7 @@
+
 @for (job of jobData$ | async; track $index) {
     <fen-job-card [cardData]="job"></fen-job-card>
+}
+@if (loading$.value == true) {
+    <mat-spinner></mat-spinner>
 }

@@ -1,6 +1,31 @@
 nav{
     width: 100%;
-    display: flex;
-    gap: 32px;
-    padding: 16px 24px;
+    
+    mat-toolbar{
+        display: flex;
+        gap: 32px;
+        padding: 16px 24px;
+        background-color: #d7e3ff;
+
+        div{
+            padding: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #005cbb;
+            border-radius: 8px;
+
+            transition: color 250ms ease-in-out;
+
+            &:hover{
+                background-color: #005cbb1a;
+            }
+        }
+
+    }
+}
+.active{
+    background-color: #005cbb1a;
+    color: #ffffffd7!important;
 }

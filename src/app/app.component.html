@@ -1,6 +1,15 @@
 <nav>
-  <a routerLink="">Home</a>
-  <a routerLink="newjob">Auftrag anlegen</a>
+  <mat-toolbar>
+    <div routerLink="home" routerLinkActive="active">
+      <mat-icon>home</mat-icon>
+      <span>Fenris ZPMS</span>
+    </div>
+    <div routerLink="newjob"  routerLinkActive="active">
+      <mat-icon>library_add</mat-icon>
+      <span > Auftrag Anlegen</span>
+    </div>
+
+  </mat-toolbar>
 </nav>
 <main>
   <router-outlet></router-outlet>
