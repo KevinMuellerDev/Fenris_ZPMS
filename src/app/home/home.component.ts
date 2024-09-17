@@ -22,5 +22,10 @@ export class HomeComponent {
       switchMap(() => this.dataService.getJobs()),
       distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
     );
+    this.jobData$.forEach((data)=>{
+      console.log(data);
+      
+    })
+    
   }
 }

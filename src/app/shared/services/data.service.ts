@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private dataUrl = "http://127.0.0.1:3000/TAGK"
+  private dataUrl = "http://127.0.0.1:3000/job"
   constructor(private http: HttpClient) { }
 
   getJobs(): Observable<ToolJob[]>{

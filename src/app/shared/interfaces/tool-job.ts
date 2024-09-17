@@ -6,7 +6,7 @@ export interface ToolJob {
     otherTests: boolean;
     box: number;
     comment: string;
-    typeOfTest: string;
+    typeOfTest: string[];
     climateState: string;
     id: string;
 }
