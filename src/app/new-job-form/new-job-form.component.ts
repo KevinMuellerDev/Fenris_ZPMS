@@ -32,14 +32,14 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class NewJobFormComponent {
   name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  date1 = new FormControl('', Validators.required)
+  dateOfReceipt = new FormControl('', Validators.required)
   matcher = new MyErrorStateMatcher();
 
   dateToday: number = 0;
   roomsFilter: any;
 
   public onDate(event: any): void {
-    console.log(this.date1.value);
+    console.log(this.dateOfReceipt.value);
     
   }
 
