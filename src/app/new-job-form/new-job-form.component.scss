@@ -1,0 +1,54 @@
+.job-generator-frame {
+    width: 100%;
+    height: calc(100dvh - 64px);
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        box-sizing: border-box;
+        border: 1px solid black;
+
+        .input-wrapper {
+            width: 90%;
+
+            input {
+                width: calc(100% - 8px);
+                height: 32px;
+            }
+        }
+    }
+}
+
+.form-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.input-wrapper-col2 {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    gap: 16px;
+
+
+    input {
+        width: 90%;
+        height: 32px;
+    }
+}
+
+
+
+.example-full-width {
+    width: 90%;
+}

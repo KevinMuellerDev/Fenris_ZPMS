@@ -1,1 +1,44 @@
-<p>new-job-form works!</p>
+<div class="job-generator-frame">
+    <form>
+        <div class="form-frame">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Bezeichnung</mat-label>
+                <input type="text" matInput [formControl]="name" placeholder="Bitte Bezeichnung angeben">
+                @if (name.hasError('required')) {
+                <mat-error>Bzeichnung ist <strong>erforderlich !</strong></mat-error>
+                }
+            </mat-form-field>
+
+            <div class="input-wrapper-col2">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [formControl]="date1" [matDatepicker]="picker1">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <!--
+        name: string;
+        dateOfReceipt: number;
+        desiredDeadline: number;
+        client: string;
+        otherTests: boolean;
+        typeOfTest: string[];
+        box: number;
+        comment: string;
+        climateState: string;
+        id: string;
+            -->
+
+        </div>
+    </form>
+</div>
