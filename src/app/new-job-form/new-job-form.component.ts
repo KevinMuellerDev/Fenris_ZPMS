@@ -31,15 +31,21 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrl: './new-job-form.component.scss'
 })
 export class NewJobFormComponent {
-  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  dateOfReceipt = new FormControl('', Validators.required)
+  jobForm: FormGroup;
   matcher = new MyErrorStateMatcher();
 
-  dateToday: number = 0;
-  roomsFilter: any;
+  dateToday: Date = new Date();
+
+  constructor(){
+    this.jobForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      dateOfReceipt: new FormControl('', [Validators.required])
+    });
+    
+  }
 
   public onDate(event: any): void {
-    console.log(this.dateOfReceipt.value);
+    console.log(this.jobForm.controls['dateOfReceipt'].value);
     
   }
 

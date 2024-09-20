@@ -1,14 +1,14 @@
 <div class="job-generator-frame">
-    <form>
+    <form [formGroup]="jobForm">
         <div class="form-frame">
 
             <mat-form-field class="example-full-width">
                 <mat-label>Bezeichnung</mat-label>
-                <input type="text" minlength="3" matInput [formControl]="name" placeholder="Bitte Bezeichnung angeben">
-                @if (name.hasError('minlength') && !name.hasError('required')) {
+                <input type="text" minlength="3" matInput formControlName="name" placeholder="Bitte Bezeichnung angeben">
+                @if (jobForm.controls['name'].hasError('minlength') && !jobForm.controls['name'].hasError('required')) {
                     <mat-error>Bitte eine Bezeichnungslänge von min. 3 Buchstaben wählen !</mat-error>
                   }
-                @if (name.hasError('required')) {
+                @if (jobForm.hasError('required')) {
                 <mat-error>Bzeichnung ist <strong>erforderlich !</strong></mat-error>
                 }
             </mat-form-field>
@@ -16,7 +16,7 @@
             <div class="input-wrapper-col2">
                 <mat-form-field class="example-full-width">
                     <mat-label>Choose a date</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [formControl]="dateOfReceipt" [matDatepicker]="picker1">
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt" [matDatepicker]="picker1">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
