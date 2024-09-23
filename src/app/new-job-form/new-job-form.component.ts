@@ -38,8 +38,6 @@ export class NewJobFormComponent {
   jobForm: FormGroup;
   matcher = new MyErrorStateMatcher();
   dateToday: Date = new Date();
-  dateReceipt!: number;
-  deadline!:number;
   machines: any;
 
 
@@ -60,14 +58,6 @@ export class NewJobFormComponent {
     console.log(this.jobForm.value)
     this.machines = mach
     console.log(this.jobForm.controls['typeOfTest']);
-  }
-
-  public onDateRec(): void {
-    this.dateReceipt = this.jobForm.controls['dateOfReceipt'].value;
-  }
-
-  public onDateDead(): void {
-    this.deadline = this.jobForm.controls['desiredDeadline'].value;
   }
 
   containsMachine(machine: string): boolean {
