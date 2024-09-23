@@ -1,5 +1,6 @@
 .outer-frame {
     width: 384px;
+    height: calc(280px - 64px);
     padding: 32px;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -15,6 +16,8 @@
         #jobname {
             font-weight: 600;
             font-size: 18px;
+            max-width: 230px;
+            line-break: auto;
         }
 
         .upper-frame-box {

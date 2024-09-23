@@ -1,44 +1,82 @@
 <div class="job-generator-frame">
-    <form [formGroup]="jobForm" >
+    <form [formGroup]="jobForm">
         <div class="form-frame">
 
             <mat-form-field class="example-full-width">
                 <mat-label>Bezeichnung</mat-label>
-                <input type="text" minlength="3" matInput formControlName="name" placeholder="Bitte Bezeichnung angeben">
+                <input type="text" minlength="3" matInput formControlName="name"
+                    placeholder="Bitte Bezeichnung angeben">
                 @if (jobForm.controls['name'].hasError('minlength') && !jobForm.controls['name'].hasError('required')) {
-                    <mat-error>Bitte eine Bezeichnungslänge von min. 3 Buchstaben wählen !</mat-error>
-                  }
+                <mat-error>Bitte eine Bezeichnungslänge von min. 3 Buchstaben wählen !</mat-error>
+                }
                 @if (jobForm.hasError('required')) {
-                <mat-error>Bzeichnung ist <strong>erforderlich !</strong></mat-error>
+                <mat-error>Bezeichnung ist <strong>erforderlich !</strong></mat-error>
                 }
             </mat-form-field>
 
             <div class="input-wrapper-col2">
                 <mat-form-field class="example-full-width">
                     <mat-label>Eingang ZPF</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt" [matDatepicker]="pickerOfReceipt">
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt"
+                        [matDatepicker]="pickerOfReceipt">
                     <mat-datepicker-toggle matIconSuffix [for]="pickerOfReceipt"></mat-datepicker-toggle>
                     <mat-datepicker #pickerOfReceipt></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <mat-label>Terminwunsch</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [matDatepicker]="picker" formControlName="desiredDeadline">
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [matDatepicker]="picker"
+                        formControlName="desiredDeadline">
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
             </div>
-            <!--
-        name: string;
-        dateOfReceipt: number;
-        desiredDeadline: number;
-        client: string;
-        otherTests: boolean;
-        typeOfTest: string[];
-        box: number;
-        comment: string;
-        climateState: string;
-        id: string;
-            -->
+
+            <div class="input-wrapper-col2">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Auftraggeber</mat-label>
+                    <input type="text" minlength="3" matInput formControlName="client"
+                        placeholder="Bitte Kunden angeben">
+                    @if (jobForm.hasError('required')) {
+                    <mat-error>Kunde ist <strong>erforderlich !</strong></mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Kiste</mat-label>
+                    <input type="text" maxlength="3" matInput formControlName="box" placeholder="Bitte Kiste angeben">
+                    @if (jobForm.hasError('required')) {
+                    <mat-error>Box ist <strong>erforderlich !</strong></mat-error>
+                    }
+                </mat-form-field>
+            </div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Bemerkung</mat-label>
+                <input type="text" matInput formControlName="comment" placeholder="Bitte Bemerkung angeben">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Maschine</mat-label>
+                <mat-select formControlName="typeOfTest" multiple>
+                    @for (machine of machines; track machine) {
+                    <mat-option [value]="machine.name">{{machine.name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            @if (containsMachine("ROB")) {
+            <fen-machine-frame></fen-machine-frame>
+            }
+
+            @if (containsMachine("TAGK")) {
+            <fen-machine-frame></fen-machine-frame>
+            }
+
+            @if (containsMachine("SLPE")) {
+            <fen-machine-frame></fen-machine-frame>
+            }
+
+            @if (containsMachine("SAG")) {
+            <fen-machine-frame></fen-machine-frame>
+            }
 
         </div>
     </form>
