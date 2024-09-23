@@ -63,7 +63,7 @@
             </mat-form-field>
 
             @if (containsMachine("ROB")) {
-            <fen-machine-frame></fen-machine-frame>
+            <fen-machine-frame (machineDataEvent)="getMachineData('tagk',$event)"></fen-machine-frame>
             }
 
             @if (containsMachine("TAGK")) {

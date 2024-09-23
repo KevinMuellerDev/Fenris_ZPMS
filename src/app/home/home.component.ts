@@ -29,7 +29,7 @@ export class HomeComponent {
     );
 
     this.jobData$.forEach((data) => {
-      console.log(this.jobData$);
+      console.log(data);
     })
 
   }

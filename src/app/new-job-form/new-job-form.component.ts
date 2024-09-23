@@ -40,6 +40,7 @@ export class NewJobFormComponent {
   dateToday: Date = new Date();
   machines: any;
 
+
   constructor() {
     this.jobForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -48,11 +49,12 @@ export class NewJobFormComponent {
       client: new FormControl('', [Validators.required]),
       otherTests: new FormControl('', [Validators.required]),
       box: new FormControl('', [Validators.required]),
-      comment: new FormControl('', [Validators.required]),
+      comment: new FormControl(''),
       typeOfTest: new FormControl('', [Validators.required]),
       climateState: new FormControl('', [Validators.required]),
       id: new FormControl('', [Validators.required]),
     });
+
     console.log(this.jobForm.value)
     this.machines = mach
     console.log(this.jobForm.controls['typeOfTest']);
@@ -65,6 +67,16 @@ export class NewJobFormComponent {
   containsMachine(machine: string): boolean {
     const tests = this.jobForm.controls['typeOfTest'].value
     return tests.includes(machine)
+  }
+
+  getMachineData(machine: string, data: any) {
+    if (this.jobForm.controls[machine] == undefined) {
+      this.jobForm.addControl(machine, new FormControl('', [Validators.required]))
+    }
+    this.jobForm.controls[machine].setValue(data)
+    setTimeout(() => {
+      console.log(this.jobForm.value)
+    }, 200);
   }
 
 }

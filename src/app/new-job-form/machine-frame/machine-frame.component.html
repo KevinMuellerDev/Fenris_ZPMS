@@ -1,1 +1,8 @@
-<p>machine-frame works!</p>
+<mat-form-field>
+    <mat-label>Toppings</mat-label>
+    <mat-select [formControl]="climateState" multiple>
+      @for (climate of climates; track climate) {
+        <mat-option (onSelectionChange)="dataToJobFrame()" [value]="climate">{{climate}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
