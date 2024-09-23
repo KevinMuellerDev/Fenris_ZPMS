@@ -17,14 +17,14 @@
             <div class="input-wrapper-col2">
                 <mat-form-field class="example-full-width">
                     <mat-label>Eingang ZPF</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt"
+                    <input [min]="dateToday" matInput (dateChange)="onDateRec()" formControlName="dateOfReceipt"
                         [matDatepicker]="pickerOfReceipt">
                     <mat-datepicker-toggle matIconSuffix [for]="pickerOfReceipt"></mat-datepicker-toggle>
                     <mat-datepicker #pickerOfReceipt></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <mat-label>Terminwunsch</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [matDatepicker]="picker"
+                    <input [min]="dateToday" matInput (dateChange)="onDateDead()" [matDatepicker]="picker"
                         formControlName="desiredDeadline">
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
