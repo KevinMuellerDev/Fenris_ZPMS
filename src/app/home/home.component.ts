@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { DataService } from '../shared/services/data.service';
 import { ToolJob } from '../shared/interfaces/tool-job';
 import { CommonModule } from '@angular/common';
-import { JobCardComponent } from "../job-card/job-card.component";
+import { JobCardComponent } from "../shared/components/job-card/job-card.component";
 import { BehaviorSubject, distinctUntilChanged, interval, Observable, startWith, switchMap, tap } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class HomeComponent {
   jobData$: Observable<ToolJob[]>;
   loading$ = new BehaviorSubject<Boolean>(true);
+  
   dataService = inject(DataService);
 
   constructor() {

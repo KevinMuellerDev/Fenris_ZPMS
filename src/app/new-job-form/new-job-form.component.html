@@ -1,5 +1,5 @@
 <div class="job-generator-frame">
-    <form [formGroup]="jobForm">
+    <form [formGroup]="jobForm" >
         <div class="form-frame">
 
             <mat-form-field class="example-full-width">
@@ -15,16 +15,14 @@
 
             <div class="input-wrapper-col2">
                 <mat-form-field class="example-full-width">
-                    <mat-label>Choose a date</mat-label>
-                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt" [matDatepicker]="picker1">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
+                    <mat-label>Eingang ZPF</mat-label>
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" formControlName="dateOfReceipt" [matDatepicker]="pickerOfReceipt">
+                    <mat-datepicker-toggle matIconSuffix [for]="pickerOfReceipt"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerOfReceipt></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Choose a date</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-label>Terminwunsch</mat-label>
+                    <input [min]="dateToday" matInput (dateChange)="onDate($event)" [matDatepicker]="picker" formControlName="desiredDeadline">
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -44,4 +42,7 @@
 
         </div>
     </form>
+    <div class="live-preview-wrapper">
+        <fen-job-card [cardData]="jobForm.value"></fen-job-card>
+    </div>
 </div>

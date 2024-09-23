@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { ToolJob } from '../shared/interfaces/tool-job';
+import { ToolJob } from '../../interfaces/tool-job';
 import { CommonModule } from '@angular/common';
 
 @Component({

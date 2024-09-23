@@ -1,4 +1,5 @@
 .job-generator-frame {
+    display: flex;
     width: 100%;
     height: calc(100dvh - 64px);
     border: 1px solid black;
@@ -45,6 +46,13 @@
         width: 90%;
         height: 32px;
     }
+}
+
+.live-preview-wrapper{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
