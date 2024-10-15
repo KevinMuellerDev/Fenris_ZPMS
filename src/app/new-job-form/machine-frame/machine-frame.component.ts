@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   templateUrl: './machine-frame.component.html',
   styleUrl: './machine-frame.component.scss'
 })
+
 export class MachineFrameComponent {
   @Output() machineDataEvent = new EventEmitter<any>();
   climates: string[] = ["Labor", "Praxis"];

@@ -5,18 +5,18 @@ nav{
     
     mat-toolbar{
         display: flex;
-        gap: 32px;
-        padding: 16px 24px;
+        gap: 2rem;
+        padding: 1rem 1.5rem;
         background-color: #d7e3ff;
 
         div{
-            padding: 12px;
+            padding: 0.75rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
             color: #005cbb;
-            border-radius: 8px;
+            border-radius: 0.5rem;
 
             transition: color 250ms ease-in-out;
 

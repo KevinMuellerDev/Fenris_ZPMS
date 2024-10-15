@@ -1,6 +1,6 @@
 <div>
     @for (job of jobData$ | async; track $index; let i = $index) {
-    <fen-job-card [style.z-index]="1000-i" [cardData]="job"></fen-job-card>
+    <fen-job-card [style.z-index]="1000-i" [style.margin-left]="i - 300 + 'px'" [cardData]="job"></fen-job-card>
     }
 </div>
 

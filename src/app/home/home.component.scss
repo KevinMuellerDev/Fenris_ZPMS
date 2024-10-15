@@ -6,17 +6,18 @@ mat-spinner{
 }
 
 div{
-    margin: 20px 280px;
     display: flex;
     flex-direction: row;
-    
+    padding-top: 1rem;
+    left: 19.5rem;
+    position: absolute;
     
 
     fen-job-card{
+        
         background-color: white;
-        margin-left: -240px;
         cursor: pointer;
-
+        border-radius: 1rem;
         &:hover{
             transform: scale(1.025);
             z-index: 1100!important;

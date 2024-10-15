@@ -1,10 +1,10 @@
 .outer-frame {
-    width: 384px;
-    height: calc(280px - 64px);
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    max-width: 320px;
+    width: 24rem;
+    height: calc(17.5rem - 4rem);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0rem 0.1875rem 0.375rem, rgba(0, 0, 0, 0.23) 0rem 0.1875rem 0.375rem;
+    max-width: 20rem;
     z-index: 1000;
 
     .upper-frame {
@@ -15,15 +15,16 @@
 
         #jobname {
             font-weight: 600;
-            font-size: 18px;
-            max-width: 230px;
+            font-size: 1.125rem;
+            max-width: 14.375rem;
             line-break: auto;
         }
 
         .upper-frame-box {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 0.5rem;
+            min-height:5.125rem;
 
             span {
                 font-weight: 600;
@@ -39,7 +40,7 @@
     .date-frame,
     .client-frame,
     .test-frame {
-        margin-top: 12px;
+        margin-top: 0.75rem;
         display: flex;
         gap: 12px;
 
@@ -47,6 +48,10 @@
             font-weight: 600;
         }
 
+    }
+
+    .date-frame{
+        height: 3rem;
     }
 
 
